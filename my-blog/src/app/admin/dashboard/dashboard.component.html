@@ -1,0 +1,45 @@
+<div class="bigcontainer">
+    <!-- <app-login></app-login> -->
+    <section id="heading">
+        <div class="container">
+            <h1>General Information</h1>
+            <div>
+                <button class="button" (click)="handleCreate()">Create</button>
+                <button class="delbutton" (click)="handleLogout()">Logout</button>
+            </div>
+
+        </div>
+    </section>
+    <section id="postlist">
+        <table id="posts">
+            <tr>
+                <th>Title</th>
+                <th>Date Created</th>
+                <th>Content</th>
+                <th>Action</th>
+            </tr>
+
+            <tr *ngFor = "let row of posts">
+                <td >
+                  {{row.title}}
+                </td>
+                <td >
+                    {{row.dateCreated}}
+                  </td>
+                  <td >
+                    {{row.content}}
+                  </td>
+                  <td >
+                    <div class="action">
+                        <p><b><a  
+                            [routerLink]="['./managepost/'+row.id]" 
+                            [queryParams]="{mode:'update'}"
+                            >Update</a></b></p>
+                        /
+                        <p class="del"><b><a [routerLink]="" (click)="handleDel(row.id)" target="_blank">Delete</a></b></p>
+                    </div>
+                  </td>
+              </tr>
+        </table>
+    </section>
+</div>

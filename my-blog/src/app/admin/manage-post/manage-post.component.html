@@ -1,0 +1,15 @@
+<div class="container">
+    <h1 *ngIf="manageMode">{{manageMode}} Post</h1>
+
+    <section id="createform">
+        <form [formGroup]="formEditor" (ngSubmit)="handleSubmit()">
+            <div class="innercontainer">
+                <label for="title"><b>Title</b></label>
+                <input type="text" placeholder="Enter Title" formControlName="title" name="title">
+                <label for="content"><b>Content</b></label>
+                <quill-editor [placeholder]="'Enter content'" formControlName="content"></quill-editor>
+                <button type="submit">{{manageMode}}</button>
+            </div>
+        </form>
+    </section>
+</div>
