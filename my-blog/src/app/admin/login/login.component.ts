@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Router ,ActivatedRoute} from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,13 +18,12 @@ export class LoginComponent implements OnInit {
   loginPayLoad: any;
 
 
-  constructor(private fb: FormBuilder,private router:Router) { }
+  constructor(private fb: FormBuilder, private router: Router, public authService: AuthService) { }
 
   handleLogin() {
     this.loginPayLoad = this.loginForm.value;
     this.loginForm.reset();
-    this.router.navigate(['admin']);
-    // console.log(this.loginPayLoad);
+    this.authService.login(this.loginPayLoad);
   }
 
   ngOnInit(): void {

@@ -1,0 +1,15 @@
+.content {
+    margin-top: 15px;
+    padding: 15px;
+}
+
+.postdetail{
+    max-width: 1000px;
+    padding: 15px;
+    margin: auto;
+    background-color: whitesmoke;
+}
+
+.postdetail h1{
+    margin: 0;
+}

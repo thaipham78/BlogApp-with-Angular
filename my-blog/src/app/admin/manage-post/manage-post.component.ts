@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 @Component({
@@ -63,8 +63,8 @@ export class ManagePostComponent implements OnInit {
 
   getPost(id: string) {
     let data = this.posts.find(post => post.id == id);
-    this.formEditor.setValue({ title: data.title, content: data.content })
-    console.log(data);
+    this.formEditor.setValue({ title: data.title, content: data.content });
+    // console.log(data);
   }
 
   getQueryParam() {
@@ -73,7 +73,7 @@ export class ManagePostComponent implements OnInit {
       // console.log(data);
       if (data) {
         this.modeFromUrl = data;
-        this.getManageMode()
+        this.getManageMode();
       }
     });
   }
@@ -82,8 +82,8 @@ export class ManagePostComponent implements OnInit {
     let result: any = this.modeList.find(ele => ele == this.modeFromUrl.toLocaleLowerCase());
     if (result) {
       this.manageMode = this.modeFromUrl;
-      this.manageMode = this.manageMode[0].toUpperCase() + this.manageMode.slice(1);;
-      console.log(this.manageMode);
+      this.manageMode = this.manageMode[0].toUpperCase() + this.manageMode.slice(1);
+      // console.log(this.manageMode);
     }
   }
 
@@ -96,7 +96,7 @@ export class ManagePostComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.getParam()
-    this.getQueryParam()
+    this.getParam();
+    this.getQueryParam();
   }
 }

@@ -1,0 +1,87 @@
+.content {
+    display: flex;
+    margin-top: 15px;
+    padding: 15px;
+}
+
+header {
+    width: 400px;
+    text-align: center;
+    margin: auto;
+}
+
+#bloglist h2 {
+    margin: 0;
+
+}
+
+#bloglist ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#bloglist ul li {
+    margin-top: 15px;
+}
+
+#bloglist ul li {
+    cursor: pointer;
+}
+
+#bloglist ul li:hover {
+    color:cadetblue;
+}
+
+
+.card {
+    display: flex;
+    height: 160px;
+}
+
+.contentholder {
+    margin-left: 15px;
+}
+
+#sidebar {
+    width: 600px;
+    margin-left: 30px;
+}
+
+#sidebar h2 {
+    margin: 0;
+}
+
+.sidebarcontent li {
+    margin-top: 15px;
+}
+
+.sidebarcontent li {
+    cursor: pointer;
+}
+
+.sidebarcontent li:hover {
+    color: cornflowerblue;
+}
+
+
+.sidebarcontentholder {
+    margin-left: 15px;
+}
+
+.sidebarcontentholder p {
+    margin-top: 5px;
+    height: 100%;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebarcard {
+    display: flex;
+}

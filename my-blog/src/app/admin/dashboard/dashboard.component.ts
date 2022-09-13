@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -37,21 +38,21 @@ export class DashboardComponent implements OnInit {
 
   ]
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute,public authService:AuthService) { }
 
 
   handleCreate() {
-    console.log(this.route);
+    // console.log(this.route);
     this.router.navigate(['managepost'], { queryParams: { mode: "create" }, relativeTo: this.route });
   }
 
   handleLogout() {
-    this.router.navigate(['login']);
+    this.authService.logout();
   }
 
   handleDel(data: string) {
     this.posts = this.posts.filter(ele => ele.id != data);
-    console.log(this.posts);
+    // console.log(this.posts);
   }
 
   ngOnInit(): void {

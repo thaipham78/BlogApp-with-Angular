@@ -1,0 +1,39 @@
+<header>
+    <h1><b>THE BLOG</b></h1>
+    <p>Welcome to the blog of <span class="">unknown</span></p>
+</header>
+<div class="content">
+    <section id="bloglist">
+        <h2>Posts</h2>
+        <ul>
+            <li *ngFor="let row of posts" (click)="goToDetail(row.id)">
+            
+                    <div class="card">
+                        <div class="imgcontainer"><img [src]="row.image" alt="Image" width="236px" height="158px"></div>
+                        <div class="contentholder">
+                            <h2>{{row.title}}</h2>
+                            <p>{{row.content}}</p>
+                        </div>
+
+                    </div>
+           
+            </li>
+        </ul>
+    </section>
+
+    <section id="sidebar">
+        <h2>Popular Posts</h2>
+        <ul class="sidebarcontent">
+            <li *ngFor="let row of popularPosts" (click)="goToDetail(row.id)">
+                <div class="sidebarcard">
+                    <div class="sidebarimgcontainer"><img [src]="row.image" alt="Image" width="100px" height="100px">
+                    </div>
+                    <div class="sidebarcontentholder">
+                        <h2>{{row.title}}</h2>
+                        <p>{{row.content}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+</div>

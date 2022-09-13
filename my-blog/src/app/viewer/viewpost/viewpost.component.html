@@ -1,0 +1,8 @@
+<section class="content">
+    <div class="postdetail"  *ngIf="post" >
+        <h1>{{post.title}}</h1>
+        <p>{{post.dateCreated}}</p>
+        <p>{{post.content}}</p>
+    </div>
+    <h1 *ngIf="!post">Something wrong !</h1>
+</section>
